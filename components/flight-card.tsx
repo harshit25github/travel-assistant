@@ -45,7 +45,7 @@ export function FlightCard({
   }
 
   return (
-    <Card className="w-full max-w-lg mx-auto mb-4 shadow-lg hover:shadow-xl transition-shadow border">
+    <Card className="w-full max-w-md shadow-lg hover:shadow-xl transition-shadow border">
       <CardHeader>
         <div className="flex justify-between items-start">
           <CardTitle className="flex items-center gap-2 text-foreground">

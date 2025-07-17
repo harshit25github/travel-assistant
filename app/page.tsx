@@ -83,10 +83,14 @@ export default function TravelChatbot() {
   const handleQuickAction = (action: string) => {
     if (action === "places") {
       setShowPlaces(true)
-      setShowFlights(false)
     } else if (action === "flights") {
       setShowFlights(true)
+    } else if (action === "all") {
+      setShowPlaces(true)
+      setShowFlights(true)
+    } else if (action === "clear") {
       setShowPlaces(false)
+      setShowFlights(false)
     }
   }
 
@@ -109,7 +113,7 @@ export default function TravelChatbot() {
 
           <CardContent className="flex-1 overflow-y-auto p-6 space-y-4">
             {/* Quick Action Buttons */}
-            <div className="flex gap-2 mb-4">
+            <div className="flex gap-2 mb-4 flex-wrap">
               <Button
                 variant="outline"
                 size="sm"
@@ -128,22 +132,62 @@ export default function TravelChatbot() {
                 <Plane className="w-4 h-4" />
                 Show Flights
               </Button>
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => handleQuickAction("all")}
+                className="flex items-center gap-2"
+              >
+                <MapPin className="w-4 h-4" />
+                <Plane className="w-4 h-4" />
+                Show All
+              </Button>
+              {(showPlaces || showFlights) && (
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={() => handleQuickAction("clear")}
+                  className="flex items-center gap-2"
+                >
+                  Clear All
+                </Button>
+              )}
             </div>
 
-            {/* Sample Cards Display */}
-            {showPlaces && (
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-                {samplePlaces.map((place, index) => (
-                  <TravelPlaceCard key={index} {...place} />
-                ))}
-              </div>
-            )}
+            {/* Cards Display Section */}
+            {(showPlaces || showFlights) && (
+              <div className="mb-6">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                  {/* Places Column */}
+                  {showPlaces && (
+                    <div className="space-y-4">
+                      <h3 className="text-lg font-semibold text-foreground flex items-center gap-2">
+                        <MapPin className="w-5 h-5 text-primary" />
+                        Travel Destinations
+                      </h3>
+                      <div className="space-y-4">
+                        {samplePlaces.map((place, index) => (
+                          <TravelPlaceCard key={index} {...place} />
+                        ))}
+                      </div>
+                    </div>
+                  )}
 
-            {showFlights && (
-              <div className="space-y-4 mb-6">
-                {sampleFlights.map((flight, index) => (
-                  <FlightCard key={index} {...flight} />
-                ))}
+                  {/* Flights Column */}
+                  {showFlights && (
+                    <div className="space-y-4">
+                      <h3 className="text-lg font-semibold text-foreground flex items-center gap-2">
+                        <Plane className="w-5 h-5 text-primary" />
+                        Available Flights
+                      </h3>
+                      <div className="space-y-4">
+                        {sampleFlights.map((flight, index) => (
+                          <FlightCard key={index} {...flight} />
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
               </div>
             )}
 

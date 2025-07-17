@@ -14,16 +14,16 @@ body {
 
 @layer base {
   :root {
-    --background: 0 0% 100%; /* White */
-    --foreground: 0 0% 15%; /* Dark Gray for text */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
     --card: 0 0% 100%;
     --card-foreground: 0 0% 3.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 3.9%;
     --primary: 210 90% 50%; /* Vibrant Blue */
-    --primary-foreground: 0 0% 98%; /* White for text on primary */
+    --primary-foreground: 0 0% 98%;
     --secondary: 140 70% 40%; /* Complementary Green */
-    --secondary-foreground: 0 0% 98%; /* White for text on secondary */
+    --secondary-foreground: 0 0% 98%;
     --muted: 0 0% 96.1%;
     --muted-foreground: 0 0% 45.1%;
     --accent: 210 90% 90%; /* Lighter Blue for accent */
@@ -49,8 +49,8 @@ body {
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
   .dark {
-    --background: 220 10% 10%; /* Dark Gray background for dark mode */
-    --foreground: 0 0% 98%; /* White for text */
+    --background: 220 10% 10%; /* Darker background for dark mode */
+    --foreground: 0 0% 98%;
     --card: 220 10% 15%; /* Darker card for dark mode */
     --card-foreground: 0 0% 98%;
     --popover: 220 10% 15%;

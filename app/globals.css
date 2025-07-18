@@ -5,64 +5,74 @@
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 0 0% 9%;
+    --foreground: 222.2 84% 4.9%;
 
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 9%;
+    --card-foreground: 222.2 84% 4.9%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 9%;
+    --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 221 83% 53%; /* A vibrant blue */
-    --primary-foreground: 0 0% 98%;
+    --primary: 217.2 91.2% 59.8%; /* Cheapoair Blue */
+    --primary-foreground: 210 20% 98%;
 
-    --secondary: 30 84% 56%; /* A vibrant orange */
-    --secondary-foreground: 0 0% 9%;
+    --secondary: 30 98% 50%; /* Cheapoair Orange */
+    --secondary-foreground: 222.2 47.4% 11.2%;
 
-    --muted: 0 0% 96.1%;
-    --muted-foreground: 0 0% 45.1%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 0 0% 96.1%;
-    --accent-foreground: 0 0% 9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
+    --destructive-foreground: 210 20% 98%;
 
-    --border: 220 14.3% 95.9%;
-    --input: 220 14.3% 95.9%;
-    --ring: 221 83% 53%; /* Primary blue */
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
 
     --radius: 0.5rem;
+
+    /* Custom colors for Cheapoair theme */
+    --cheapoair-blue: 210 80% 40%; /* A vibrant blue */
+    --cheapoair-orange: 28 90% 55%; /* A vibrant orange */
+    --cheapoair-green: 140 70% 40%; /* A vibrant green */
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 20% 98%;
+    --background: 222.2 47.4% 11.2%;
+    --foreground: 210 40% 98%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 20% 98%;
+    --card: 222.2 47.4% 11.2%;
+    --card-foreground: 210 40% 98%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 20% 98%;
+    --popover: 222.2 47.4% 11.2%;
+    --popover-foreground: 210 40% 98%;
 
-    --primary: 221 83% 53%; /* A vibrant blue */
+    --primary: 217.2 91.2% 59.8%; /* Cheapoair Blue */
     --primary-foreground: 210 20% 98%;
 
-    --secondary: 30 84% 56%; /* A vibrant orange */
-    --secondary-foreground: 210 20% 98%;
+    --secondary: 30 98% 50%; /* Cheapoair Orange */
+    --secondary-foreground: 222.2 47.4% 11.2%;
 
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
 
     --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 20% 98%;
+    --accent-foreground: 210 40% 98%;
 
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 20% 98%;
+    --destructive-foreground: 210 40% 98%;
 
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
-    --ring: 221 83% 53%; /* Primary blue */
+    --ring: 212.7 26.8% 83.9%;
+
+    /* Custom colors for Cheapoair theme in dark mode */
+    --cheapoair-blue: 210 80% 60%; /* Lighter blue for dark mode */
+    --cheapoair-orange: 28 90% 65%; /* Lighter orange for dark mode */
+    --cheapoair-green: 140 70% 60%; /* Lighter green for dark mode */
   }
 }
 
@@ -73,4 +83,112 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* Custom Tailwind classes for Cheapoair theme */
+.bg-cheapoair-blue {
+  background-color: hsl(var(--cheapoair-blue));
+}
+.text-cheapoair-blue {
+  color: hsl(var(--cheapoair-blue));
+}
+.bg-cheapoair-orange {
+  background-color: hsl(var(--cheapoair-orange));
+}
+.text-cheapoair-orange {
+  color: hsl(var(--cheapoair-orange));
+}
+.bg-cheapoair-green {
+  background-color: hsl(var(--cheapoair-green));
+}
+.text-cheapoair-green {
+  color: hsl(var(--cheapoair-green));
+}
+.border-cheapoair-blue {
+  border-color: hsl(var(--cheapoair-blue));
+}
+.border-cheapoair-orange {
+  border-color: hsl(var(--cheapoair-orange));
+}
+.border-cheapoair-green {
+  border-color: hsl(var(--cheapoair-green));
+}
+
+/* Gradient for Guest button */
+.bg-guest-gradient {
+  background: linear-gradient(to right, hsl(var(--cheapoair-green)), hsl(var(--cheapoair-orange)));
+}
+
+/* Custom styles for Cheapoair theme */
+.cheapoair-gradient-blue-green {
+  background: linear-gradient(to right, hsl(217.2 91.2% 59.8%), hsl(142.1 76.2% 36.3%));
+}
+
+.cheapoair-text-blue {
+  color: hsl(217.2 91.2% 59.8%);
+}
+
+.cheapoair-text-orange {
+  color: hsl(30 98% 50%);
+}
+
+.cheapoair-bg-blue {
+  background-color: hsl(217.2 91.2% 59.8%);
+}
+
+.cheapoair-bg-orange {
+  background-color: hsl(30 98% 50%);
+}
+
+.cheapoair-logo-blue {
+  color: hsl(217.2 91.2% 59.8%);
+}
+
+.cheapoair-logo-orange {
+  color: hsl(30 98% 50%);
+}
+
+.cheapoair-logo-suitcase {
+  color: hsl(30 98% 50%); /* Orange for the suitcase part */
+}
+
+/* Ensure text visibility in both modes */
+.text-cheapoair-primary {
+  @apply text-primary dark:text-primary-foreground;
+}
+
+.text-cheapoair-secondary {
+  @apply text-secondary dark:text-secondary-foreground;
+}
+
+.bg-cheapoair-primary {
+  @apply bg-primary dark:bg-primary;
+}
+
+.bg-cheapoair-secondary {
+  @apply bg-secondary dark:bg-secondary;
+}
+
+.border-cheapoair-primary {
+  @apply border-primary dark:border-primary;
+}
+
+.border-cheapoair-secondary {
+  @apply border-secondary dark:border-secondary;
+}
+
+.text-cheapoair-logo-blue {
+  color: hsl(217.2 91.2% 59.8%); /* Blue */
+}
+
+.text-cheapoair-logo-orange {
+  color: hsl(30 98% 50%); /* Orange */
+}
+
+.text-cheapoair-logo-suitcase {
+  color: hsl(30 98% 50%); /* Orange for the suitcase part */
+}
+
+.guest-gradient-circle {
+  background: linear-gradient(to bottom right, #a8ff78, #78ffd6); /* Green-yellow gradient */
 }

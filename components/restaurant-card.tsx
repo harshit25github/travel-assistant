@@ -1,14 +1,16 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { MapPin } from "lucide-react"
+import { MapPin, Star } from "lucide-react"
 
-interface TravelPlaceCardProps {
+interface RestaurantCardProps {
   name: string
   location: string
+  cuisine: string
+  priceRange: string
+  rating: number
   description: string
-  imageUrl: string
 }
 
-export function TravelPlaceCard({ name, location, description, imageUrl }: TravelPlaceCardProps) {
+export function RestaurantCard({ name, location, cuisine, priceRange, rating, description }: RestaurantCardProps) {
   return (
     <Card className="w-full h-full flex flex-col">
       {" "}
@@ -24,6 +26,12 @@ export function TravelPlaceCard({ name, location, description, imageUrl }: Trave
         {" "}
         {/* Added flex-grow and flex flex-col justify-between */}
         <div>
+          <p className="text-md font-medium mb-1">{cuisine}</p>
+          <p className="text-sm text-muted-foreground mb-2">{priceRange}</p>
+          <div className="flex items-center text-sm text-muted-foreground mb-2">
+            <Star className="w-4 h-4 mr-1 text-yellow-500 fill-yellow-500" />
+            {rating} / 5
+          </div>
           <p className="text-sm text-muted-foreground">{description}</p>
         </div>
       </CardContent>
